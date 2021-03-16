@@ -19,6 +19,7 @@ def github():
 menubar.add_command(label="Github Source", command=github)
 menubar.add_separator()
 menubar.add_command(label="Made by: Mineplay3")
+menubar.add_command(label="Made using Python 3.8")
 
 root.config(menu=main_menu)
 
@@ -82,10 +83,11 @@ amount.grid(row=4, column=2, columnspan=1)
 
 amount.set(1)
 
+text4 = Label(root, text=f"Spam Quantity ({amount.get()})")
+text4.grid(row=4, column=1)
+
 def textup4():
-    text4 = Label(root, text=f"Spam Quantity ({amount.get()})")
-    text4.grid(row=4, column=1)
-    root.update()
+    text4.config(text=f"Spam Quantity ({amount.get()})") 
     root.after(10, textup4) 
 
 textup4()
@@ -94,10 +96,11 @@ delay = Scale(root, from_=10, to=3000, orient=HORIZONTAL, background="#36393f", 
 delay.grid(row=5, column=2, columnspan=1)
 delay.set(10)
 
+text5 = Label(root, text=f"Spam Delay ({delay.get()} ms)")
+text5.grid(row=5, column=1)
+
 def textup5():
-    text5 = Label(root, text=f"Spam Delay ({delay.get()} ms)")
-    text5.grid(row=5, column=1)
-    root.update()
+    text5.config(text=f"Spam Delay ({delay.get()} ms)") 
     root.after(10, textup5) 
 
 textup5()
